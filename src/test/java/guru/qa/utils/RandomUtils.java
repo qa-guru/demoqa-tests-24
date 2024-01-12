@@ -1,6 +1,9 @@
 package guru.qa.utils;
 
+import com.github.javafaker.Faker;
+
 import java.security.SecureRandom;
+import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
@@ -56,6 +59,14 @@ public class RandomUtils {
         int index = getRandomInt(0, genders.length - 1);
 
         return genders[index];
+    }
+
+    public static String getSomething() {
+        Faker faker = new Faker(new Locale("ru"));
+
+        String firstName = faker.name().firstName();
+
+        return firstName + 10;
     }
 
 }
