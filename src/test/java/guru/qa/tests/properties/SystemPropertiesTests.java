@@ -1,8 +1,10 @@
 package guru.qa.tests.properties;
 
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+
+import static java.lang.String.format;
+
 
 public class SystemPropertiesTests {
     @Test
@@ -57,6 +59,18 @@ public class SystemPropertiesTests {
 
         // gradle property2_test -Dbrowser=mozilla -Dbrowser_version=96.0 -Dbrowser_size=1080x720
         System.out.println(browserConfig);
+    }
+
+    @Test
+    @Tag("property3")
+    void systemProperty7Test() {
+        String name = System.getProperty("name","default student");
+        String message = format("Hello, %s, how ar u?", name);
+
+        // gradle property3_test -Dname=Alex Egorov // WRONG
+        // gradle property3_test -Dname="Alex Egorov"
+        // gradle property3_test "-Dname=Alex Egorov"
+        System.out.println(message);
     }
 
 }

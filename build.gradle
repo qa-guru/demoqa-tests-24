@@ -69,3 +69,9 @@ task property2_test(type: Test) {
         includeTags("property2")
     }
 }
+
+task property3_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("property3")
+    }
+}
