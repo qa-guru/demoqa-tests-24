@@ -29,6 +29,7 @@ allure {
 dependencies {
     testImplementation(
             'com.github.javafaker:javafaker:1.0.2',
+            "org.aeonbits.owner:owner:1.0.12",
             'org.junit.jupiter:junit-jupiter:5.10.1',
             'com.codeborne:selenide:6.19.1'
     )
@@ -73,5 +74,17 @@ task property2_test(type: Test) {
 task property3_test(type: Test) {
     useJUnitPlatform {
         includeTags("property3")
+    }
+}
+
+task owner1_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("owner1")
+    }
+}
+
+task owner3_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("owner3")
     }
 }
